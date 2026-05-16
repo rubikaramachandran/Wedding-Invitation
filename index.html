@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Wedding Invitation – Anand Raj &amp; Bhuvana</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♥</text></svg>"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♥</text></svg>"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- AUTO-PLAYING BACKGROUND MUSIC (loop, no button)
+       Place your wedding.mp3 in this folder — it plays automatically.
+       Free Tamil BGM: https://pixabay.com/music (search "shehnai" or "nadaswaram")
+  -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="anbil-avan_9c4yAVL6.mp3" type="audio/mpeg"/>
+  </audio>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — HERO / DOOR OPENING
+  ══════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="door-wrap">
+      <div class="door door-left">
+        <div class="door-inner">
+          <div class="door-ornament">❧</div>
+          <div class="door-line"></div>
+          <div class="door-ornament bottom">❦</div>
+        </div>
+      </div>
+      <div class="door door-right">
+        <div class="door-inner">
+          <div class="door-ornament">❧</div>
+          <div class="door-line"></div>
+          <div class="door-ornament bottom">❦</div>
+        </div>
+      </div>
+      <div class="door-heart">♥</div>
+    </div>
+
+    <div class="hero-content" id="heroContent">
+      <p class="hero-invite-line">— Together with their families —</p>
+      <p class="hero-sub">we joyfully invite you to the wedding of</p>
+      <h1 class="hero-names">
+        <span class="groom-name">R. Anand Raj</span>
+        <span class="amp">&amp;</span>
+        <span class="bride-name">P. Bhuvana</span>
+      </h1>
+      <a href="#dates" class="hero-scroll-hint">scroll to reveal ↓</a>
+    </div>
+    <div class="petal-layer" id="petalLayer"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — DATE SCRATCH REVEAL
+  ══════════════════════════════════════ -->
+  <section id="dates" class="dates-section">
+    <div class="dates-bg-text">WHEN</div>
+    <h2 class="section-title">Save the Date</h2>
+    <p class="section-sub">Scroll to reveal the details</p>
+
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="scratch-overlay" data-card="0">
+          <span class="scratch-hint">✦ Scroll to Reveal ✦</span>
+        </div>
+        <div class="date-card-content">
+          <div class="date-icon">🌹</div>
+          <h3 class="event-label">Reception</h3>
+          <div class="date-big">24</div>
+          <div class="date-month-year">May · 2026</div>
+          <div class="date-day">Sunday</div>
+          <div class="date-time">6:00 PM Onwards</div>
+        </div>
+      </div>
+
+      <div class="date-card">
+        <div class="scratch-overlay" data-card="1">
+          <span class="scratch-hint">✦ Scroll to Reveal ✦</span>
+        </div>
+        <div class="date-card-content">
+          <div class="date-icon">🪔</div>
+          <h3 class="event-label">Muhurtham</h3>
+          <div class="date-big">25</div>
+          <div class="date-month-year">May · 2026</div>
+          <div class="date-day">Monday</div>
+          <div class="date-time">9:00 AM – 10:30 AM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — COUPLE PHOTO
+  ══════════════════════════════════════
+  HOW TO ADD YOUR COUPLE PHOTO:
+  ──────────────────────────────
+  Easy method:
+    1. Copy your photo into this folder
+    2. Rename it to:  couple.jpg
+    3. Done! The page will show it automatically.
+
+  Custom filename:
+    Open script.js → find this line at the top:
+    const COUPLE_PHOTO = '';
+    Change to:  const COUPLE_PHOTO = 'yourphoto.jpg';
+
+  Tip: Works with .jpg .jpeg .png .webp
+  ══════════════════════════════════════ -->
+  <section id="couple" class="couple-section">
+    <div class="couple-frame-wrap">
+      <div class="couple-corner tl"></div>
+      <div class="couple-corner tr"></div>
+      <div class="couple-corner bl"></div>
+      <div class="couple-corner br"></div>
+
+      <div class="couple-photo-box" id="couplePhotoBox">
+        <div class="couple-placeholder" id="couplePlaceholder">
+          <svg viewBox="0 0 340 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="120" cy="75" rx="28" ry="32" fill="#c8a97e" opacity=".85"/>
+            <path d="M65 280 Q80 175 120 150 Q160 175 175 280Z" fill="#c8a97e" opacity=".85"/>
+            <path d="M90 195 Q130 205 170 185" stroke="#a07850" stroke-width="2" fill="none" opacity=".6"/>
+            <ellipse cx="220" cy="75" rx="26" ry="30" fill="#8b6e4e" opacity=".85"/>
+            <path d="M175 280 Q190 175 220 153 Q250 175 265 280Z" fill="#8b6e4e" opacity=".85"/>
+            <path d="M168 205 Q185 215 192 205" stroke="#c8a97e" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+            <text x="165" y="42" font-size="28" fill="#d4a373" text-anchor="middle" opacity=".7">♥</text>
+          </svg>
+          <p class="ph-label">📷 Add your photo</p>
+          <p class="ph-sub">Name it <strong>couple.jpg</strong> &amp; place in same folder</p>
+        </div>
+        <img class="couple-real-photo" id="coupleRealPhoto" src="" alt="Anand Raj &amp; Bhuvana" style="display:none"/>
+      </div>
+
+      <div class="couple-name-banner">
+        <span>Anand Raj</span>
+        <span class="banner-heart">♥</span>
+        <span>Bhuvana</span>
+      </div>
+    </div>
+    <blockquote class="couple-quote">"Two souls, one heart — forever intertwined."</blockquote>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 4 — DUAL COUNTDOWN
+  ══════════════════════════════════════ -->
+  <section id="countdown" class="countdown-section">
+    <div class="countdown-bg-ornament">✦</div>
+
+    <div class="cd-tabs">
+      <button class="cd-tab active" data-tab="reception">🌹 Reception</button>
+      <button class="cd-tab" data-tab="muhurtham">🪔 Muhurtham</button>
+    </div>
+
+    <div class="cd-panel" id="panel-reception">
+      <h2 class="section-title light">Reception Countdown</h2>
+      <p class="countdown-sub">Sunday · 24 May 2026 · 6:00 PM</p>
+      <div class="countdown-grid">
+        <div class="countdown-block"><div class="count-num" id="r-days">--</div><div class="count-label">Days</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="r-hours">--</div><div class="count-label">Hours</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="r-mins">--</div><div class="count-label">Mins</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="r-secs">--</div><div class="count-label">Secs</div></div>
+      </div>
+    </div>
+
+    <div class="cd-panel hidden" id="panel-muhurtham">
+      <h2 class="section-title light">Muhurtham Countdown</h2>
+      <p class="countdown-sub">Monday · 25 May 2026 · 9:00 AM</p>
+      <div class="countdown-grid">
+        <div class="countdown-block"><div class="count-num" id="m-days">--</div><div class="count-label">Days</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="m-hours">--</div><div class="count-label">Hours</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="m-mins">--</div><div class="count-label">Mins</div></div>
+        <div class="count-sep">:</div>
+        <div class="countdown-block"><div class="count-num" id="m-secs">--</div><div class="count-label">Secs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 5 — PROGRAMME TIMELINE
+  ══════════════════════════════════════ -->
+  <section id="programme" class="programme-section">
+    <h2 class="section-title">Programme</h2>
+    <p class="section-sub">The celebrations unfold as follows</p>
+
+    <div class="timeline">
+      <div class="timeline-item left" data-aos>
+        <div class="tl-dot">🌹</div>
+        <div class="tl-card">
+          <h3>Reception</h3>
+          <p class="tl-date">Sunday, 24 May 2026</p>
+          <p class="tl-time">6:00 PM Onwards</p>
+          <p class="tl-desc">Join us for an evening of joy, music, and celebration as we receive our beloved guests.</p>
+        </div>
+      </div>
+      <div class="timeline-item right" data-aos>
+        <div class="tl-dot">🪔</div>
+        <div class="tl-card">
+          <h3>Muhurtham</h3>
+          <p class="tl-date">Monday, 25 May 2026</p>
+          <p class="tl-time">9:00 AM – 10:30 AM</p>
+          <p class="tl-desc">The sacred moment — the tying of the thali under divine blessings and the joy of loved ones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 6 — VENUE & MAP (FREE, NO API KEY)
+  ══════════════════════════════════════ -->
+  <section id="venue" class="venue-section">
+    <div class="venue-ornament-top">— ✦ —</div>
+    <h2 class="section-title">Venue</h2>
+
+    <div class="venue-card">
+      <div class="venue-icon">🏛️</div>
+      <h3 class="venue-name">V.R.J. Sindhuja Mahal</h3>
+      <p class="venue-address">Anakavoor, Cheyyar - 604 407<br/>Tiruvannamalai Dist , TamilNadu</p>
+      <p class="venue-note">Both Reception &amp; Muhurtham are held at this venue.</p>
+      <a class="map-btn"
+         href="https://www.google.com/maps/search/V.R.J.+Sindhuja+Mahal+Anakavoor+Cheyyar+Tamil+Nadu"
+         target="_blank" rel="noopener">
+        📍 View on Google Maps
+      </a> 
+
+     
+    </div>
+
+    <!-- Stylish directions card — no API key, no errors -->
+    
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 7 — YOUR PRESENCE IS THE GIFT
+  ══════════════════════════════════════ -->
+  <section id="gift" class="gift-section">
+    <div class="gift-heart-bg">♥</div>
+    <div class="gift-content">
+      <div class="gift-icon">🎁</div>
+      <h2 class="gift-title">Your Presence is Our<br/>Greatest Gift</h2>
+      <p class="gift-text">
+        No gift could be greater than the warmth of your presence on our special day.
+        Your blessings and love mean everything to us and our families.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 8 — RSVP
+  ══════════════════════════════════════ -->
+  <section id="rsvp" class="rsvp-section">
+    <h2 class="section-title">Send Your Wishes</h2>
+    <p class="section-sub">We'd love to know you're coming!</p>
+
+    <form class="rsvp-form" id="rsvpForm" novalidate>
+      <div class="form-group">
+        <label for="rsvp-name">Your Name</label>
+        <input type="text" id="rsvp-name" name="name" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <label for="rsvp-email">Email Address</label>
+        <input type="email" id="rsvp-email" name="email" placeholder="you@example.com" required />
+      </div>
+      <div class="form-group">
+        <label>Will you celebrate this beautiful beginning with us?</label>
+        <div class="attend-options">
+          <label class="attend-opt">
+            <input type="radio" name="attending"  value="yes" required />
+            <span>🥂 Yes, we’ll celebrate together</span>
+          </label>
+          <label class="attend-opt">
+            <input type="radio" name="attending" value="no" />
+            <span>🤍 Sending blessings and love</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rsvp-msg">Your Message / Wishes</label>
+        <textarea id="rsvp-msg" name="message" rows="4" placeholder="Write your heartfelt wishes here…"></textarea>
+      </div>
+      <button type="submit" class="rsvp-btn">
+        <span class="btn-text">Send with Love ♥</span>
+        <span class="btn-loader" style="display:none">Sending…</span>
+      </button>
+      <div class="form-success" id="formSuccess" style="display:none">
+        ✦ Thank you! Your wishes have been received. We can't wait to celebrate with you! ✦
+      </div>
+    </form>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="wedding-footer">
+    <div class="footer-ornament">— ♥ —</div>
+    <p class="footer-names">Anand  &amp; Bhuvana</p>
+     <p class="footer-tagline">With Love, From Our Hearts to Yours</p>
+    <div class="footer-ornament">— ✦ —</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
