@@ -212,35 +212,55 @@
      7. MUSIC — AUTO PLAY ON LOOP
         No button. Starts as soon as user
         touches/clicks anywhere (browser policy).
+ 
+
+         /* ════════════════════════════════════════
+     7. MUSIC PLAYER — floating ▶ button + auto-play
   ════════════════════════════════════════ */
-  function initMusic() {
-    var audio = document.getElementById('bgMusic');
-    if (!audio) return;
+ function initMusic() {
 
-    function tryPlay() {
-      audio.volume = 0.45;
-      audio.play().catch(function () { /* browser blocked — retry on next interaction */ });
-    }
+  var audio = document.getElementById('bgMusic');
 
-    // Try immediately (works if browser allows autoplay)
-    tryPlay();
+  if (!audio) return;
 
-    // Fallback: play on very first user interaction anywhere on page
-    var played = false;
-    function onInteract() {
-      if (played) return;
-      played = true;
-      tryPlay();
-      document.removeEventListener('click',      onInteract);
-      document.removeEventListener('touchstart', onInteract);
-      document.removeEventListener('scroll',     onInteract);
-      document.removeEventListener('keydown',    onInteract);
-    }
-    document.addEventListener('click',      onInteract, { passive: true });
-    document.addEventListener('touchstart', onInteract, { passive: true });
-    document.addEventListener('scroll',     onInteract, { passive: true });
-    document.addEventListener('keydown',    onInteract, { passive: true });
+  audio.volume = 0;
+
+  // Try autoplay muted
+  audio.play().catch(function(){});
+
+  // Unmute smoothly after first interaction
+  function enableSound() {
+
+    audio.muted = false;
+
+    let volume = 0;
+
+    const fadeAudio = setInterval(function(){
+
+      if(volume < 0.35){
+
+        volume += 0.02;
+        audio.volume = volume;
+
+      } else {
+
+        clearInterval(fadeAudio);
+
+      }
+
+    },200);
+
+    document.removeEventListener('touchstart', enableSound);
+    document.removeEventListener('click', enableSound);
+    document.removeEventListener('scroll', enableSound);
+
   }
+
+  document.addEventListener('touchstart', enableSound, { passive:true });
+  document.addEventListener('click', enableSound, { passive:true });
+  document.addEventListener('scroll', enableSound, { passive:true });
+
+}
 
   /* ════════════════════════════════════════
      8. HERO PARALLAX
