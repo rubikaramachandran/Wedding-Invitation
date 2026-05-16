@@ -223,42 +223,19 @@
 
   if (!audio) return;
 
-  audio.volume = 0;
+  audio.volume = 0.35;
 
-  // Try autoplay muted
-  audio.play().catch(function(){});
+  function startMusic() {
 
-  // Unmute smoothly after first interaction
-  function enableSound() {
+    audio.play();
 
-    audio.muted = false;
-
-    let volume = 0;
-
-    const fadeAudio = setInterval(function(){
-
-      if(volume < 0.35){
-
-        volume += 0.02;
-        audio.volume = volume;
-
-      } else {
-
-        clearInterval(fadeAudio);
-
-      }
-
-    },200);
-
-    document.removeEventListener('touchstart', enableSound);
-    document.removeEventListener('click', enableSound);
-    document.removeEventListener('scroll', enableSound);
+    document.removeEventListener('touchstart', startMusic);
+    document.removeEventListener('click', startMusic);
 
   }
 
-  document.addEventListener('touchstart', enableSound, { passive:true });
-  document.addEventListener('click', enableSound, { passive:true });
-  document.addEventListener('scroll', enableSound, { passive:true });
+  document.addEventListener('touchstart', startMusic);
+  document.addEventListener('click', startMusic);
 
 }
 
