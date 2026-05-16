@@ -210,12 +210,9 @@
 
   /* ════════════════════════════════════════
      7. MUSIC — AUTO PLAY ON LOOP
-        No button. Starts as soon as user
-        touches/clicks anywhere (browser policy).
- 
-
         
-    function initMusic() {
+ 
+function initMusic() {
 
   const music =
     document.getElementById('bgMusic');
@@ -230,32 +227,39 @@
 
   music.volume = 0.35;
 
-  let playing = false;
+  let isPlaying = false;
 
-  btn.addEventListener('click', function () {
+  btn.addEventListener('click', async function () {
 
-    if (!playing) {
+    try {
 
-      music.play();
+      if (!isPlaying) {
 
-      icon.innerHTML = '❚❚';
+        await music.play();
 
-      playing = true;
+        icon.innerHTML = '❚❚';
 
-    } else {
+        isPlaying = true;
 
-      music.pause();
+      } else {
 
-      icon.innerHTML = '♫';
+        music.pause();
 
-      playing = false;
+        icon.innerHTML = '♫';
+
+        isPlaying = false;
+
+      }
+
+    } catch(err) {
+
+      console.log(err);
 
     }
 
   });
 
 }
-
   /* ════════════════════════════════════════
      8. HERO PARALLAX
   ════════════════════════════════════════ */
