@@ -260,6 +260,7 @@ function initMusic() {
   });
 
 }
+   /* ════════════════════════════════════════
      8. HERO PARALLAX
   ════════════════════════════════════════ */
   function initParallax() {
