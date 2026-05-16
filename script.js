@@ -214,28 +214,45 @@
         touches/clicks anywhere (browser policy).
  
 
-         /* ════════════════════════════════════════
-     7. MUSIC PLAYER — floating ▶ button + auto-play
-  ════════════════════════════════════════ */
- function initMusic() {
+        
+    function initMusic() {
 
-  var audio = document.getElementById('bgMusic');
+  const music =
+    document.getElementById('bgMusic');
 
-  if (!audio) return;
+  const btn =
+    document.getElementById('musicBtn');
 
-  audio.volume = 0.35;
+  const icon =
+    document.getElementById('musicIcon');
 
-  function startMusic() {
+  if (!music || !btn) return;
 
-    audio.play();
+  music.volume = 0.35;
 
-    document.removeEventListener('touchstart', startMusic);
-    document.removeEventListener('click', startMusic);
+  let playing = false;
 
-  }
+  btn.addEventListener('click', function () {
 
-  document.addEventListener('touchstart', startMusic);
-  document.addEventListener('click', startMusic);
+    if (!playing) {
+
+      music.play();
+
+      icon.innerHTML = '❚❚';
+
+      playing = true;
+
+    } else {
+
+      music.pause();
+
+      icon.innerHTML = '♫';
+
+      playing = false;
+
+    }
+
+  });
 
 }
 
