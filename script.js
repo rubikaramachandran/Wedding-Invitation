@@ -208,10 +208,10 @@
     test.src = photoSrc;
   }
 
-  /* ════════════════════════════════════════
-     7. MUSIC — AUTO PLAY ON LOOP
-        
- 
+/* ════════════════════════════════════════
+   7. MUSIC PLAYER
+════════════════════════════════════════ */
+
 function initMusic() {
 
   const music =
@@ -260,7 +260,6 @@ function initMusic() {
   });
 
 }
-  /* ════════════════════════════════════════
      8. HERO PARALLAX
   ════════════════════════════════════════ */
   function initParallax() {
