@@ -229,6 +229,20 @@ function initMusic() {
 
   let isPlaying = false;
 
+   document.addEventListener('visibilitychange', function () {
+
+  if (document.hidden) {
+
+    music.pause();
+
+  } else if (isPlaying) {
+
+    music.play();
+
+  }
+
+});
+
   btn.addEventListener('click', async function () {
 
     try {
@@ -342,6 +356,12 @@ ${message}`;
 
     var whatsappURL =
 `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+     form.reset();
+
+form.style.display = 'none';
+
+document.getElementById('formSuccess').style.display = 'block';
 
     window.location.href = whatsappURL;
 
