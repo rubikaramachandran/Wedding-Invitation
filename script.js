@@ -343,7 +343,9 @@ ${message}`;
     var whatsappURL =
 `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    window.open(whatsappURL, '_blank');
+    window.location.href = whatsappURL;
+
+form.reset();
 
   });
 
