@@ -338,7 +338,7 @@ ${attendText}
 💌 Wishes:
 ${message}`;
 
-    var phoneNumber = '918189970609';
+    var phoneNumber = '916379565447';
 
     var whatsappURL =
 `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
